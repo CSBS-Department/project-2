@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>ADMIN</title>
+   
+
+    <style>
+        body {
+            background-image: url('static/s.jpg');
+            position: relative; /* Ensure the body is positioned relatively */
+            display: flex; /* Use flexbox for centering */
+            justify-content: center; /* Center content horizontally */
+            align-items: center; /* Center content vertically */
+            height: 100vh; /* Set the height to 100% of the viewport height */
+        }
+        .container {
+            text-align: center; /* Center align the content inside the container */
+        }
+        .admin-form {
+            position: relative;
+            text-align: center; /* Center align the form */
+            margin-top: 20px; /* Adjust top margin for spacing */
+        }
+        .btn-primary {
+            display: inline-block;
+            margin-top: 20px; /* Adjust top margin for spacing */
+            padding: 10px 20px;
+            background-color: #007bff; /* Blue color */
+            color: #fff; /* White text color */
+            text-decoration: none; /* Remove underline */
+            border: none; /* Remove border */
+            border-radius: 5px; /* Rounded corners */
+        }
+        .btn-primary:hover {
+            background-color: #0056b3; /* Darker blue color on hover */
+        }
+        .back-button {
+            background-color: #0056b3;
+            color: black;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            text-decoration: none;
+            position: absolute; /* Position button absolutely */
+            top: 20px; /* Adjust top position as needed */
+            left: 20px; /* Adjust left position as needed */
+        }
+
+        .back-button:hover {
+           background-color: lightgreen;
+        }
+
+        /* Style for labels */
+        label {
+            color: #007bff; /* Blue color */
+            font-weight: bold; /* Make the label text bold */
+            margin-right: 10px; /* Add some space to the right of the label */
+        }
+
+        /* Style for icon */
+        .icon {
+            margin-right: 5px; /* Add some space to the right of the icon */
+        }
+
+        /* Style for the ADMIN paragraph */
+        .admin-form p {
+            color: red; /* Set the color to red */
+            font-weight: bold; /* Make the text bold */
+        }
+
+    </style>        
+</head>
+<body>
+    <div class="container">
+        <div class="admin-form">
+            <form method="post" action="/admin" id="admin-form">
+                <p><i class="icon fas fa-user-shield"></i> ADMIN</p>
+                <label><i class="icon fas fa-user"></i> Username:</label>
+                <input type="text" name="name"><br><br>
+                <label><i class="icon fas fa-lock"></i> Password:</label>
+                <input type="password" name="pass"><br><br>
+                <input type="submit" value="Login" class="btn-primary">
+            </form>
+        </div>
+    </div>
+    
+    <a href="{{url_for('loginpage')}}" class="back-button">Back to Home</a>
+    
+    <script>
+        function toggleForms(formToShow) {
+            document.getElementById('admin-form').style.display = formToShow === 'admin' ? 'block' : 'none';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Title</title>
+    <!-- Include Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            background-image: url("static/e.jpg");
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+            color: black;
+            background-color: white;
+        }
+
+        th {
+            background-color: #160c0c;
+            color: honeydew;
+        }
+
+        h1 {
+            color: white;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 40px;
+            font-style: italic;
+            font-weight: bolder;
+        }
+
+        button {
+            padding: 10px 10px;
+            border: 1px solid;
+            color: aliceblue;
+            background-color: black;
+            border-radius: 10px;
+            margin-right: 95%;
+        }
+
+        button:hover {
+            background-color: rgb(214, 183, 29);
+        }
+
+        /* Add style for Font Awesome icons */
+        .fa {
+            margin-right: 5px;
+        }
+        h1 {
+           color: green;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <a href="/login">
+            <button>
+                <i class="fa fa-arrow-left"></i> Back
+            </button>
+        </a>
+
+        <h1>Feedback </h1>
+
+        <table>
+            <thead>
+                <tr>
+                    <th><i class="fa fa-id-badge"></i> ID</th>
+                    <th><i class="fa fa-user"></i> NAME</th>
+                    <th><i class="fa fa-comment"></i> FEEDBACK</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                {% for data in result %}
+                    <tr>
+                        <td>{{ data[0] }}</td>
+                        <td>{{ data[1] }}</td>
+                        <td>{{ data[2] }}</td>
+                        
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </center>
+</body>
+</html>
